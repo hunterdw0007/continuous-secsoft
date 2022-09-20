@@ -1,0 +1,10 @@
+Hunter Westerlund
+hdw0007@auburn.edu
+19 September 2022
+
+1. NO_NETWORK_POLICY: 46 instances
+    The misconfiguration category that is related with not specifying network policies. Without specifying network policies Kubernetes installations are susceptible to unauthorized accesses.
+2. INSECURE_HTTP: 25 instances
+    The category of using HTTP without SSL/TLS certificates to setup URLs or transmit traffic inside and outside the Kubernetes clusters. Without SSL/TLS certificates, the data transmitted across Kubernetes objects are susceptible to man-in-the-middle (MITM) attacks.
+3. NO_ROLLING_UPDATE: 24 instances
+    The misconfiguration category that is related with not explicitly specifying RollingUpdate in the configuration file. A lack of rolling updates makes a Kubernetes installation susceptible to supply chain related attacks.
