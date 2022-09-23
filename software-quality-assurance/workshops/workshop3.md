@@ -49,3 +49,36 @@ In this workshop we will use a tool called [SLI-KUBE](https://hub.docker.com/rep
 - Upload your report on `Assignment-3` @ CANVAS 
 - Complete the [survey](https://auburn.qualtrics.com/jfe/form/SV_ekBpwjd4TkT1tpc)
 - Due: Sep 19, 2022
+
+#### Note About Windows Machines
+
+It is possible to get the UnicodeDecode error for `parser.py` on a Windows machine.  
+Replace the attached parser.py file in the `KubeSec-master` folder with the following code:
+```
+def loadMultiYAML( script_ ):
+    dicts2ret = []
+    with open(script_, constants.FILE_READ_FLAG  ) as yml_content :
+        try:
+            for d_ in yaml.safe_load_all(yml_content) :
+                # print(d_)
+                # print('='*25)
+                dicts2ret.append( d_ )
+        except yaml.YAMLError as exc:
+            print( constants.YAML_SKIPPING_TEXT  )   
+        except UnicodeDecodeError as err_:
+            print( constants.YAML_SKIPPING_TEXT  )   
+    return dicts2ret  
+```
+
+and 
+
+```
+def readYAMLAsStr( path_script ):
+    yaml_as_str = constants.YAML_SKIPPING_TEXT
+    with open( path_script , constants.FILE_READ_FLAG) as file_:
+        try:
+           yaml_as_str = file_.read() 
+        except UnicodeDecodeError as err_:
+            print( constants.YAML_SKIPPING_TEXT  )  
+    return yaml_as_str
+```
