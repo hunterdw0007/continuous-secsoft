@@ -56,23 +56,23 @@
 | Oct 10  | Review of Exam 1                                       |
 | Oct 12  | Exam 1 (in class)                                      |
 | Oct 14  | Introductions to CMMI                                  |
-| Oct 17  | Testing Metrics                                        |
-| Oct 19  | Software Process - Waterfall                           |
-| Oct 21  | Software Process - Scrum                               |    
+| Oct 17  | Software Process - Scrum                               |
+| Oct 19  | Software Process - Waterfall   + Recap of midterm      |
+| Oct 21  | Behavior-driven Development                            |    
 | Oct 24  | Project Updates                                        |
-| Oct 26  | Behavior-driven Development                            |
-| Oct 28  | Requirements Validation                                |
-| Nov 02  | Requirements Validation   (Workshop)                   |
-| Nov 04  | Software Forensics                                     |
-| Nov 07  | Software Forensics   (Workshop)                        |
-| Nov 09  | Software Testing Overview                              |
-| Nov 11  | Project Updates                                        |
-| Nov 14  | Review of Graphs                                       |
-| Nov 16  | Structure Testing                                      |
-| Nov 18  | Functional Testing                                     |
-| Nov 21  | Thanksgiving Break: No classes                         |
-| Nov 23  | Thanksgiving Break: No classes                         |
-| Nov 25  | Thanksgiving Break: No classes                         |
+| Oct 26  | Requirements Validation                                |
+| Oct 28  | Requirements Validation   (Workshop)                   |
+| Nov 02  | Software Forensics                                     |
+| Nov 04  | Software Forensics   (Workshop)                        |
+| Nov 07  | Software Testing Overview                              |
+| Nov 09  | Testing Metrics                                        |
+| Nov 11  | Review of Graphs                                       |
+| Nov 14  | Structure Testing                                      |
+| Nov 16  | Functional Testing                                     |
+| Nov 18  | Project Updates                                        |
+| Nov 21  | **Thanksgiving Break: No classes**                     |
+| Nov 23  | **Thanksgiving Break: No classes**                     |
+| Nov 25  | **Thanksgiving Break: No classes**                     |
 | Nov 28  | Combinatorial Interaction Testing                      |
 | Nov 30  | Concolic Testing                                       |
 | Dec 02  | Review of Final Exam                                   |
