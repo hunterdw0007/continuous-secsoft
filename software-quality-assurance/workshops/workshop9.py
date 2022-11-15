@@ -6,13 +6,21 @@ import mnist
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten
 from tensorflow.keras.utils import to_categorical
+import logging_example
+
+# logging initialized
+logger = logging_example.getSQALogger()
 
 def readData():
     iris = datasets.load_iris()
+    # logging iris - preventing poisoning
+    logger.debug('{}*{}*{}*{}'.format('workshop9.py', 'readData', type(iris.data), type(iris.target)))  
     print(type(iris.data), type(iris.target))
     X = iris.data
     Y = iris.target
     df = pd.DataFrame(X, columns=iris.feature_names)
+    # logging dataframe columns - preventing poisoning
+    logger.debug('{}*{}*{}*{}'.format('workshop9.py', 'readData', 'dataframe', df.columns()))
     print(df.head())
 
     return df 
@@ -26,6 +34,8 @@ def makePrediction():
         [3.4, 2.0, 1.1, 4.8],
     ]
     prediction = knn.predict(X)
+    # logging prediction - preventing model tricking
+    logger.debug('{}*{}*{}*{}'.format('workshop9.py', 'readData', 'prediction', prediction))
     print(prediction)    
 
 def doRegression():
@@ -36,6 +46,8 @@ def doRegression():
     diabetes_y_train = diabetes.target[:-20]
     diabetes_y_test = diabetes.target[-20:]
     regr = linear_model.LinearRegression()
+    # logging linear regression model - preventing model tricking
+    logger.debug('{}*{}*{}*{}'.format('workshop9.py', 'doRegression', 'Linear Regression', regr))
     regr.fit(diabetes_X_train, diabetes_y_train)
     diabetes_y_pred = regr.predict(diabetes_X_test)
 
@@ -54,6 +66,9 @@ def doDeepLearning():
     train_images = np.expand_dims(train_images, axis=3)
     test_images = np.expand_dims(test_images, axis=3)
 
+    # logging images - preventing model tricking
+    logger.debug('{}*{}*{}*{}'.format('workshop9.py', 'doDeepLearning', train_images, test_images))
+
     num_filters = 8
     filter_size = 3
     pool_size = 2
@@ -64,6 +79,9 @@ def doDeepLearning():
     Flatten(),
     Dense(10, activation='softmax'),
     ])
+
+    # logging model - preventing model tricking
+    logger.debug('{}*{}*{}*{}'.format('workshop9.py', 'doDeepLearning', 'model', model))
 
     # Compile the model.
     model.compile(
@@ -83,6 +101,9 @@ def doDeepLearning():
     model.save_weights('cnn.h5')
 
     predictions = model.predict(test_images[:5])
+
+    # logging predictions - preventing model tricking
+    logger.debug('{}*{}*{}*{}'.format('workshop9.py', 'doDeepLearning', 'predictions', predictions))
 
     print(np.argmax(predictions, axis=1)) # [7, 2, 1, 0, 4]
 
